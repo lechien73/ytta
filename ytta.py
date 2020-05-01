@@ -10,16 +10,18 @@ Code Institute, April 2020
 MIT License
 """
 
+import sys
+
 from youtube_transcript_api import YouTubeTranscriptApi
 
 
-def get_video_urls():
+def get_video_urls(list_file):
     """
     Helper function to read the videos.txt file
     and return a list of URLS
     """
 
-    with open("videos.txt") as f:
+    with open(list_file) as f:
         videos = f.read().split("\n")
 
     return videos
@@ -61,13 +63,13 @@ def write_transcript(video_id):
             o.write(line["text"] + "\n")
 
 
-def main():
+def main(list_file):
     """
     Main program function. Calls the other helper
     functions
     """
 
-    videos = get_video_urls()
+    videos = get_video_urls(list_file)
 
     for video in videos:
 
@@ -81,4 +83,7 @@ def main():
             print("Warning: Comment line - skipping")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) == 1:
+        sys.exit("Usage: python3 ytta.py <list filename>")
+    else:
+        main(sys.argv[1])
