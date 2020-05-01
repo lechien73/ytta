@@ -1,6 +1,6 @@
 """
 YTTA - YouTube Transcript Automator
-Should that be "Automater", I don't know!
+Should that be "Automater"? I don't know!
 Simple script using the YouTube Transcript API to retrieve
 the transcript of videos and write the text to a new file
 without timing or duration data.
