@@ -23,7 +23,9 @@ Then, add your video URLS to the `video.txt` file. You can use either the short 
 
 You can add comments to the `video.txt` file, by putting a `#` at the beginning of a line. These comments will be ignored.
 
-Finally, run `python3 ytta.py`. This will process the videos and write the text of the transcript to a file called `ts_[YouTube Video ID].txt`
+Finally, run `python3 ytta.py`.
+
+This will process the videos and write the text of the transcript to a file called `ts_[YouTube Video ID].txt`
 
 ### License
 
