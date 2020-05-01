@@ -2,7 +2,7 @@
 
 This is a simple YouTube Transcript Automator. It uses the [YouTube Transcript API](https://pypi.org/project/youtube-transcript-api) to retrieve the text of a video transcript.
 
-The purpose is to write the text of the transcript to a text file without any timing or duration information. This is helpful when uploading a transcript to an edited or lengthened video.
+The purpose is to write the text of the transcript to a text file without any timing or duration information. This is helpful when uploading a transcript to an edited or lengthened video, or downloading the auto-generated transcript so it can be edited easily in a text editor.
 
 ## Usage
 
