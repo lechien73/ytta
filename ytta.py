@@ -11,6 +11,7 @@ MIT License
 """
 
 import sys
+import re
 
 from youtube_transcript_api import YouTubeTranscriptApi
 
@@ -36,15 +37,9 @@ def get_id_or_none(line):
     if line[0] == "#" or len(line) <= 1:
         video_id = None
 
-    elif line[16] == "/":
-        video_id = line[17:]
-    
-    elif line[31] == "=":
-        video_id = line[32:]
-    
     else:
-        video_id = None
-        print("Error: Unrecognised URL")
+        result = re.search("([^\/|\=]*)$", line)
+        video_id = result.group(0) if result else None
 
     return video_id
 
@@ -80,7 +75,7 @@ def main(list_file):
             write_transcript(video_id)
             
         else:
-            print("Warning: Comment line - skipping")
+            print("Warning: Skipped line")
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
