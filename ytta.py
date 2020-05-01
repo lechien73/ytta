@@ -1,3 +1,15 @@
+"""
+YTTA - YouTube Transcript Automator
+Should that be "Automater", I don't know!
+Simple script using the YouTube Transcript API to retrieve
+the transcript of videos and write the text to a new file
+without timing or duration data.
+
+(c) Matt Rudge
+Code Institute, April 2020
+MIT License
+"""
+
 from youtube_transcript_api import YouTubeTranscriptApi
 
 
@@ -37,14 +49,14 @@ def get_id_or_none(line):
 
 def write_transcript(video_id):
     """
-    The meat and two veg of the whole shebang
+    The tofu and two veg of the whole shebang
     Gets the transcript from YouTube and writes
     text and no timings to a text file
     """
 
     transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
-    with open("ts_" + video_id + ".txt", "w") as o:
+    with open(f"ts_{video_id}.txt", "w") as o:
         for line in transcript:
             o.write(line["text"] + "\n")
 
@@ -66,7 +78,7 @@ def main():
             write_transcript(video_id)
             
         else:
-            print("Comment line - skipping")
+            print("Warning: Comment line - skipping")
 
 if __name__ == "__main__":
     main()

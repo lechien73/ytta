@@ -15,7 +15,7 @@ or
 ```
 pip3 install youtube-transcript-api
 ```
-Then, add your video URLS to the `video.txt` file. You can use either the short address format from YouTube Studio, or the long address format from the YouTube website. If you use the long address format, then remove any extra URL parameters. Here are examples of acceptable URLS:
+Then, add your video URLS to the `video.txt` file one per line. You can use either the short address format from YouTube Studio, or the long address format from the YouTube website. If you use the long address format, then remove any extra URL parameters. Here are examples of acceptable URLS:
 
 `https://youtu.be/-ACZIssOB94`
 
