@@ -73,9 +73,10 @@ def main(list_file):
         if video_id:
             print("Processing: %s" % video)
             write_transcript(video_id)
-            
+
         else:
             print("Warning: Skipped line")
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
