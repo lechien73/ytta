@@ -58,13 +58,16 @@ def write_transcript(video_id):
             o.write(line["text"] + "\n")
 
 
-def main(list_file):
+def main(file_mode, file_or_url):
     """
     Main program function. Calls the other helper
     functions
     """
 
-    videos = get_video_urls(list_file)
+    if file_mode:
+        videos = get_video_urls(file_or_url)
+    else:
+        videos = [file_or_url]
 
     for video in videos:
 
@@ -80,6 +83,9 @@ def main(list_file):
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        sys.exit("Usage: python3 ytta.py <list filename>")
+        sys.exit("Usage: python3 ytta.py <list filename> OR -l <YouTube link>")
+    
+    if sys.argv[1] == "-l":
+        main(False, sys.argv[2])
     else:
-        main(sys.argv[1])
+        main(True, sys.argv[1])
