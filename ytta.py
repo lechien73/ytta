@@ -22,8 +22,11 @@ def get_video_urls(list_file):
     and return a list of URLS
     """
 
-    with open(list_file) as f:
-        videos = f.read().split("\n")
+    try:
+        with open(list_file) as f:
+            videos = f.read().split("\n")
+    except IOError:
+        sys.exit("Error: File not found")
 
     return videos
 
