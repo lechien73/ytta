@@ -33,6 +33,10 @@ You can also call YTTA with the `-l` switch and supply a YouTube link as an argu
 
 So, `python3 ytta.py -l https://www.youtube.com/watch?v=uFZn6W3bokM` would retrieve the transcript of just this one video and write it to a file called: `ts_uFZn6W3bokM.txt`
 
+### Limitations
+
+The YouTube Transcript API filters out HTML tags in the transcript. It's a good idea to check if any HTML tags are present in the transcript and add them back manually afterwards.
+
 ### License
 
 This script is provided under the MIT license. Please see LICENSE.txt for more information.
