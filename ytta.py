@@ -57,8 +57,7 @@ def write_transcript(video_id):
     transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
     with open(f"ts_{video_id}.txt", "w") as o:
-        for line in transcript:
-            o.write(line["text"] + "\n")
+        o.write("\n".join([line["text"] for line in transcript]))
 
 
 def main(file_mode, file_or_url):
@@ -77,7 +76,7 @@ def main(file_mode, file_or_url):
         video_id = get_id_or_none(video)
 
         if video_id:
-            print("Processing: %s" % video)
+            print(f"Processing: {video}")
             write_transcript(video_id)
 
         else:
