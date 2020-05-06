@@ -29,7 +29,7 @@ So, if you use the supplied `videos.txt` file, it would be: `python3 ytta.py vid
 
 This will process the videos and write the text of the transcript to a file called `ts_[YouTube Video ID].txt`
 
-You can also call YTTA with the `-l` switch and supply a YouTube link as an argument, if you just want to get the transcript text for one video.
+You can also call YTTA with the `-l` switch and supply a YouTube link as an argument, if you just want to get the transcript text for one video. Again, short and long format YouTube URLs are accepted.
 
 So, `python3 ytta.py -l https://www.youtube.com/watch?v=uFZn6W3bokM` would retrieve the transcript of just this one video and write it to a file called: `ts_uFZn6W3bokM.txt`
 
